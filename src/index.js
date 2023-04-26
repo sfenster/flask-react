@@ -1,11 +1,22 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 
-class Whatever extends React.Component {
+// CHOOSE ONE:
+// USE THE FOLLOWING TWO IMPORTS FOR BOOTSTRAP W/O SASS
+// CODE IN ./INDEX.CSS WILL OVERRISE AND CUSTOMIZE BOOTSTRAP
+import 'bootstrap/dist/css/bootstrap.css';
+import './index.css';
+
+// OR...
+// USE THE FOLLOWING IMPORT FOR BOOTSTRAL WITH SASS
+//import './index.scss';
+
+class HelloMessage extends React.Component {
     render() {
-        return <div>Hello from React, with Webpack!</div>;
+        return <div>Hello from Python/React, using Babel, Bootstrap and Webpack</div>;
     }
 }
-export default Whatever;
-
-ReactDOM.render(<Whatever />, document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+    <HelloMessage />
+);
